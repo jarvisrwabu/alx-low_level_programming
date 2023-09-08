@@ -18,8 +18,8 @@ int main(void)
 		if (count < 9)
 		{
 			putchar(',');
-			putchar(' ');
 		}
+		putchar(' ');
 
 		count++;
 	}
