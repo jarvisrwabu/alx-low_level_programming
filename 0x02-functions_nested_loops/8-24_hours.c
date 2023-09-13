@@ -1,42 +1,28 @@
 #include "main.h"
 
 /**
- * jack_bauer -function that print every minutes and second
- * h2 - varibale holding first digit of hours
- * h1- varibale holding last digit of hours
- * m1 - variable holding first digit of minuts
- * m2 - vraibale holding last digit of minutes
+ * jack_bauer - print every minute of a day
+ * Description: print minutes 00:00 to 23:59
  */
 
 void jack_bauer(void)
 {
+	int hours = 0;
+	int min = 0;
 
-	int h2;
-	int h1;
-	int m1;
-	int m2;
-	int limit;
-
-	for (h2 = 0; h2 <= 2; h2++)
+	while (hours < 24)
 	{
-		limit = (h2 < 2) ? 9 : 3;
-
-		for (h1 = 0; h1 <= limit; h1++)
+		while (min < 60)
 		{
-
-			for (m2 = 0; m2 <= 5; m2++)
-			{
-				for (m1 = 0; m1 <= 9; m1++)
-				{
-
-					_putchar('0' + h2);
-					_putchar('0' + h1);
-					_putchar(58);
-					_putchar('0' + m2);
-					_putchar('0' + m1);
-					_putchar(10);
-				}
-			}
+			_putchar('0' + (hours / 10));
+			_putchar('0' + (hours % 10));
+			_putchar(':');
+			_putchar('0' + (min / 10));
+			_putchar('0' + (min % 10));
+			_putchar('\n');
+			min++;
 		}
+		min = 0;
+		hours++;
 	}
 }
