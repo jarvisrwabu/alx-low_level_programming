@@ -43,8 +43,8 @@ int main(void)
 		}
 		else
 		{
-			(j > 9) ? _putchar((j / 10) + '0') : 0;
-			_putchar((j % 10) + '0');
+			(i > 9) ? _putchar((i / 10) + '0') : 0;
+			_putchar((i % 10) + '0');
 			_putchar(' ');
 		}
 	}
