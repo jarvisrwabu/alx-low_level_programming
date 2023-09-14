@@ -47,4 +47,5 @@ int main(void)
 			_putchar((j % 10) + '0');
 			_putchar(' ');
 		}
+	}
 }
