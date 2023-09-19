@@ -12,13 +12,18 @@
 
 void rev_string(char *s)
 {
-	int i, length = strlen(s);
+        int i;
+        int length = strlen(s);
+	char temp;
+	/* This is the basic algorithm for reversing */
+	/* a string by swapping and using a temp holder */
 
-	/* Reverse a string with this simple algorithm */
+        for (i = 0; i  < length / 2; i++)
+        {
 
-	for (i = length - 1; i >= 0; i--)
-	{
-		_putchar(s[i]);
-	}
-	_putchar('\n');
+		temp = s[i];
+		s[i] = s[length - i - 1];
+		s[count - i - 1] = temp;
+        }
 }
+
