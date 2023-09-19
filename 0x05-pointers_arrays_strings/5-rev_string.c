@@ -16,14 +16,6 @@ void rev_string(char *s)
 
 	/* Reverse a string with this simple algorithm */
 
-	/* Print the string first */
-
-	for (i = 0; i < length; i++)
-	{
-		_putchar(s[i]);
-	}
-	_putchar('\n');
-
 	for (i = length - 1; i >= 0; i--)
 	{
 		_putchar(s[i]);
