@@ -17,14 +17,14 @@ char *_strcat(char *dest, char *src)
 	int length, i;
 	/* Get the length of the source using a standard library */
 
-	length = strlen(src);
+	length = strlen(dest);
 	/* Concatenate source to the destination */
 
-	for (i = 0; dest[i] != '\0'; i++, length++)
+	for (i = 0; src[i] != '\0'; i++, length++)
 	{
-		src[length] = dest[i];
+		dest[length] = src[i];
 	}
 	/* Terminate the source string */
-	src[length] = '\0';
+	dest[length] = '\0';
 	return (dest);
 }
