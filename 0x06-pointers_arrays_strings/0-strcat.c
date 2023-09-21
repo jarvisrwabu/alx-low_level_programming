@@ -24,7 +24,7 @@ char *_strcat(char *dest, char *src)
 	{
 		dest[length] = src[i];
 	}
-	/* Terminate the source string */
+	/* Terminate the new destination string */
 	dest[length] = '\0';
 	return (dest);
 }
