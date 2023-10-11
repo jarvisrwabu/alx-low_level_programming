@@ -1,40 +1,55 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include "dog.h"
 
 /**
- * new_dog - create new instance of struct dog
- *
+ * new_dog - create new instance of the struct dog
  * @name: member
- *
  * @age: member
- *
  * @owner: member
- *
- * Return: initialized instance of struct dog
+ * Return: initialized instance of the struct dog
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	/* Check if input pointers are NULL */
-	if (name == NULL || owner == NULL)
-	{
-		return (NULL); /* Return NULL if fails */
-	}
+	dog_t *adog;
+	char *copy_name;
+	char *copy_owner;
 
-	/* Allocate memory for new dog construct */
-
-	dog_t *newDog = (dog_t *)malloc(sizeof(dog_t));
-	/* Check if memory allocation is successful */
-	if (newDog == NULL)
+	adog = malloc(sizeof(dog_t));
+	/* validate memory allocated to adog */
+	if (adog == NULL)
 	{
 		return (NULL);
 	}
 
-	/* Create copies of name and owner */
-	newDog->name = strdup(name); /* Duplicate name */
-	newDog->owner = strdup(owner); /* Duplicate owner */
-	newDog->age = age;
-	return (newDog);
+	adog->age = age; /* Initialize age member */
+	/* make copies of struct members and validate or else free on error */
+	/* set values of struct members to copies of arguments or set to NULL */
+	if (name != NULL)
+	{
+		copy_name = malloc(len(name) + 1);
+		if (copy_name == NULL)
+		{
+			free(adog);
+			return (NULL);
+		}
+		adog->name = strcpy(copy_name, name);
+	}
+	else
+		adog->name = NULL;
+	if (owner != NULL)
+	{
+		copy_owner = malloc(len(owner) + 1);
+		if (copy_owner == NULL)
+		{
+			free(copy_name);
+			free(adog);
+			return (NULL);
+		}
+		adog->owner = strcpy(copy_owner, owner);
+	}
+	else
+		adog->owner = NULL;
+	return (adog);
 }
