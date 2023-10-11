@@ -20,7 +20,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 	/* iterate through array and call searching function */
 	for (i = 0; i < size; i++)
 	{
-		if ((*cmp)(arr[i)) /* if returned true */
+		if (cmp(arr[i) != 0) /* if returned true */
 		{
 			return (i);
 		}
