@@ -12,13 +12,7 @@ void free_dog(dog_t *d)
 	{
 		return;
 	}
-	if (d->name) /* free members of the struct that exist */
-	{
-		free(d->name);
-	}
-	if (d->owner)
-	{
-		free(d->owner);
-	}
+	free(d->name);
+	free(d->owner);
 	free(d);
 }
