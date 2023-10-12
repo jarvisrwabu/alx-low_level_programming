@@ -12,10 +12,11 @@ int sum_them_all(const unsigned int n, ...)
 {
 	int sum = 0;
 	unsigned int i;
-
+	/* Define a va_list to work with variable arguments */
 	va_list lst;
 
 	va_start(lst, n);
+	/* Loop through variable arguments and add them to sum */
 
 	for (i = 0; i < n; i++)
 	{
@@ -31,6 +32,7 @@ int sum_them_all(const unsigned int n, ...)
 		sum += p;
 		}
 	}
+	/* Clean up memory assigned to va_list */
 	va_end(lst);
 	return (sum);
 }
