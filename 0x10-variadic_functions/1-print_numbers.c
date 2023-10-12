@@ -32,6 +32,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			printf("%d", p);
 		}
 	}
+	printf("\n");
 	/* Free memory allocated for va_lst */
 	va_end(lst);
 }
