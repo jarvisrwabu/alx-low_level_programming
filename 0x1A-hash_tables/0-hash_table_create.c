@@ -23,7 +23,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		free(table);
 		return (NULL);
 	}
-	
+
 	/*Initialize the size and give it some value*/
 	table->size = size;
 
