@@ -13,14 +13,17 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	hash_table_t *table = malloc(sizeof(hash_table_t));
 
+	if (table == NULL)
+		return (NULL);
+
 	table->array = (hash_node_t **)malloc(size * sizeof(hash_node_t *));
 
-	if (table == NULL || table->array == NULL)
+	if (table->array == NULL)
 	{
-		fprintf(stderr, "Memory allocation failed for hash Table\n");
+		free(table);
 		return (NULL);
 	}
-
+	
 	/*Initialize the size and give it some value*/
 	table->size = size;
 
