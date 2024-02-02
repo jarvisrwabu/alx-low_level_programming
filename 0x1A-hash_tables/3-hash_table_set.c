@@ -71,6 +71,7 @@ int is_hash_table_full(const hash_table_t *ht)
  * hash_table_set - Insert an element to the hash table
  * @key: Key for the node
  * @value: The value associated to the key
+ * @ht: Pointer to hash table
  * Return: 1 if Successful, 0 otherwise.
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
